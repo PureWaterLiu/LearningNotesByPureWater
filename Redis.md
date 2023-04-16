@@ -29,13 +29,13 @@
 - 支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用
 - 支持数据的备份，即master-slave模式的数据备份
 
-![image-20230415205200562](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415205200562.png)
+![image-20230415205200562](img\image-20230415205200562.png)
 
 ## 安装和介绍
 
 默认安装在: usr/local/bin
 
-![image-20230415213348569](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415213348569.png)
+![image-20230415213348569](img\image-20230415213348569.png)
 
 - redis-benchmark: 性能测试工具，服务启动后运行该命令，看看性能如何
 - redis-check-aof: 修复有问题的AOF文件
@@ -76,7 +76,7 @@ redis-server /myredis/redis7.conf
 redis-cli -a 123456 -p 6379
 ```
 
-如果ping后显示PONG则redis服务器安装成功 ![image-20230415220152218](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415220152218.png)
+如果ping后显示PONG则redis服务器安装成功 ![image-20230415220152218](img\image-20230415220152218.png)
 
 ## 退出客户端
 
@@ -166,7 +166,7 @@ Redis zeset和set一样也是string类型元素的集合，且不允许重复成
 
 Bit arrays（or simply bitmaps，我们可以称为 位图）
 
-![image-20230415223026291](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415223026291.png)
+![image-20230415223026291](img\image-20230415223026291.png)
 
 一个字节（1byte）=8位（bit）
 
@@ -244,7 +244,7 @@ KEEPTTL为6.0版本添加的可选参数，其他为2.6.12版本添加的可选�
 - XX：键存在的时候设置键值
 - KEEPTTL：保留设置前指定键的过期时间
 
-![image-20230415233708062](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415233708062.png)
+![image-20230415233708062](img\image-20230415233708062.png)
 
 - GET：返回指定键原本的值，若不存在时返回nil
 
@@ -274,7 +274,7 @@ set k2 v2
 mget k1 k2
 ```
 
-![image-20230415233905589](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415233905589.png)
+![image-20230415233905589](img\image-20230415233905589.png)
 
 - getrange key startIndex endIndex
 
@@ -283,7 +283,7 @@ set k1 abcde
 getrange k1 0 -1
 ```
 
-![image-20230415234226903](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415234226903.png)
+![image-20230415234226903](img\image-20230415234226903.png)
 
 - setrange key startIndex 替换的字符串
 
@@ -292,7 +292,7 @@ set k1 1 xxyy
 get k1
 ```
 
-![image-20230415234425804](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415234425804.png)
+![image-20230415234425804](img\image-20230415234425804.png)
 
 ### 数值增减
 
@@ -309,7 +309,7 @@ incr k1
 incrby k1 3
 ```
 
-![image-20230415234715876](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415234715876.png)
+![image-20230415234715876](img\image-20230415234715876.png)
 
 #### 同理递减
 
@@ -321,7 +321,7 @@ decr k1
 decrby k1 10
 ```
 
-![image-20230415234850218](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415234850218.png)
+![image-20230415234850218](img\image-20230415234850218.png)
 
 ### 获取字符串长度和内容追加
 
@@ -333,7 +333,7 @@ strlen k1
 append k1 xxxx
 ```
 
-![image-20230415235055653](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415235055653.png)
+![image-20230415235055653](img\image-20230415235055653.png)
 
 ### 分布式锁
 
@@ -354,7 +354,7 @@ setnx k1 v11
 
 过期才创建新的k1
 
-![image-20230415235936002](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415235936002.png)
+![image-20230415235936002](img\image-20230415235936002.png)
 
 ### getset(先get再set)
 
@@ -366,7 +366,7 @@ set k1 v1 get
 getk1
 ```
 
-![image-20230416000152798](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416000152798.png)
+![image-20230416000152798](img\image-20230416000152798.png)
 
 ## Redis列表 (List)
 
@@ -392,7 +392,7 @@ lrange list1 0 -1            - 5 4 3 2 1
 lrange list2 0 -1            - 11 22 33 44 55
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416200615224.png" alt="image-20230416200615224" style="zoom:50%;" />
+<img src="img\image-20230416200615224.png" alt="image-20230416200615224" style="zoom:50%;" />
 
 * 没有Rrange
 
@@ -405,7 +405,7 @@ rpop list1             -- 1
 lrange list1 0 -1      -- 4 3 2
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416200907226.png" alt="image-20230416200907226" style="zoom:50%;" />
+<img src="img\image-20230416200907226.png" alt="image-20230416200907226" style="zoom:50%;" />
 
 ### lindex
 
@@ -415,7 +415,7 @@ lrange list1 0 -1      -- 4 3 2
 lindex list1 0 -- 4
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416201115440.png" alt="image-20230416201115440" style="zoom:50%;" />
+<img src="img\image-20230416201115440.png" alt="image-20230416201115440" style="zoom:50%;" />
 
 ## llen
 
@@ -426,7 +426,7 @@ llen list1
 llen list2
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416201452096.png" alt="image-20230416201452096" style="zoom:50%;" />
+<img src="img\image-20230416201452096.png" alt="image-20230416201452096" style="zoom:50%;" />
 
 ### lrem
 
@@ -441,7 +441,7 @@ lrange list3 0 -1
 lrem list3 0 3       -- 把3全部删除
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416201919104.png" alt="image-20230416201919104" style="zoom:50%;" />
+<img src="img\image-20230416201919104.png" alt="image-20230416201919104" style="zoom:50%;" />
 
 ### ltrim
 
@@ -455,7 +455,7 @@ ltrim list3 0 3
 lrange list3 0 -1
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416202437248.png" alt="image-20230416202437248" style="zoom:50%;" />
+<img src="img\image-20230416202437248.png" alt="image-20230416202437248" style="zoom:50%;" />
 
 ### rpoplpush
 
@@ -468,7 +468,7 @@ rpoplpush list1 list2
 lrange list2 0 -1
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416202729042.png" alt="image-20230416202729042" style="zoom:50%;" />
+<img src="img\image-20230416202729042.png" alt="image-20230416202729042" style="zoom:50%;" />
 
 ### lset 
 
@@ -480,7 +480,7 @@ lset list1 2 marvin
 lrange list1 0 -1
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416203126624.png" alt="image-20230416203126624" style="zoom:50%;" />
+<img src="img\image-20230416203126624.png" alt="image-20230416203126624" style="zoom:50%;" />
 
 ### linsert
 
@@ -491,7 +491,7 @@ lrange list1 0 -1
 linsert list1 before marvin benny
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416203439960.png" alt="image-20230416203439960" style="zoom:50%;" />
+<img src="img\image-20230416203439960.png" alt="image-20230416203439960" style="zoom:50%;" />
 
 ### 案例
 
