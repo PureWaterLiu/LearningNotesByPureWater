@@ -518,7 +518,7 @@ hget user:001 name
 hget user:001 age
 ```
 
-![image-20230416211731298](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416211731298.png)
+![image-20230416211731298](./img/image-20230416211731298.png)
 
 #### hmset/hmget
 
@@ -529,7 +529,7 @@ hmset user:001 id 22 name l4 age 21
 hmget user:001 id name age
 ```
 
-![image-20230416212044333](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416212044333.png)
+![image-20230416212044333](./img/image-20230416212044333.png)
 
 #### hgetall/hdel
 
@@ -542,7 +542,7 @@ hgetall user:001
 hdel user:001 age
 ```
 
-![image-20230416212258480](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416212258480.png)
+![image-20230416212258480](./img/image-20230416212258480.png)
 
 #### hlen
 
@@ -552,7 +552,7 @@ hdel user:001 age
 hlen user:001
 ```
 
-![image-20230416212613333](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416212613333.png)
+![image-20230416212613333](./img/image-20230416212613333.png)
 
 #### hexists
 
@@ -565,7 +565,7 @@ hexists user:001 name  --1
 hexists user:001 score  --0
 ```
 
-![image-20230416212742940](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416212742940.png)
+![image-20230416212742940](./img/image-20230416212742940.png)
 
 #### hkeys
 
@@ -580,7 +580,7 @@ hkeys user:001
 hvals user:001
 ```
 
-![image-20230416213014817](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416213014817.png)
+![image-20230416213014817](./img/image-20230416213014817.png)
 
 #### hincrby/hincrbyfloat
 
@@ -589,7 +589,7 @@ hincrby user:001 age 5
 hincrbyfloat user:001 score 0.5
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416213705072.png" alt="image-20230416213705072" style="zoom:50%;" />
+<img src="./img/image-20230416213705072.png" alt="image-20230416213705072" style="zoom:50%;" />
 
 #### hsetnx
 
@@ -602,7 +602,7 @@ hsetnx user:001 id 22
 hsetnx user:001 id 23
 ```
 
-![image-20230416213942955](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416213942955.png)
+![image-20230416213942955](./img/image-20230416213942955.png)
 
 ### Redis集合（Set）
 
@@ -621,7 +621,7 @@ smembers set1
 
 查看set中的元素
 
-![image-20230416214954261](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416214954261.png)
+![image-20230416214954261](./img/image-20230416214954261.png)
 
 #### sismember
 
@@ -634,7 +634,7 @@ sismember set1 x
 sismember set1 1
 ```
 
-![image-20230416215212948](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416215212948.png)
+![image-20230416215212948](./img/image-20230416215212948.png)
 
 #### srem
 
@@ -647,7 +647,7 @@ srem set1 y
 srem set1 1
 ```
 
-![image-20230416215325082](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416215325082.png)
+![image-20230416215325082](./img/image-20230416215325082.png)
 
 #### scard
 
@@ -657,7 +657,7 @@ srem set1 1
 scard set1
 ```
 
-![image-20230416215413495](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416215413495.png)
+![image-20230416215413495](./img/image-20230416215413495.png)
 
 #### srandmember 
 
@@ -667,7 +667,7 @@ scard set1
 srandmember set1 3  --随机展现3个
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416215749298.png" alt="image-20230416215749298" style="zoom:50%;" />
+<img src="./img/image-20230416215749298.png" alt="image-20230416215749298" style="zoom:50%;" />
 
 #### spop
 
@@ -677,7 +677,7 @@ srandmember set1 3  --随机展现3个
 spop set1 3 --随机弹出3个
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416215821497.png" alt="image-20230416215821497" style="zoom:50%;" />
+<img src="./img/image-20230416215821497.png" alt="image-20230416215821497" style="zoom:50%;" />
 
 #### smove
 
@@ -687,7 +687,7 @@ spop set1 3 --随机弹出3个
 smove set1 set2 5  --把set1 中的 5 移动到 set2中
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416220217491.png" alt="image-20230416220217491" style="zoom:50%;" />
+<img src="./img/image-20230416220217491.png" alt="image-20230416220217491" style="zoom:50%;" />
 
 #### 集合运算
 
@@ -702,7 +702,7 @@ smove set1 set2 5  --把set1 中的 5 移动到 set2中
 sdiff set1 set2
 ```
 
-![image-20230416220612167](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416220612167.png)
+![image-20230416220612167](./img/image-20230416220612167.png)
 
 ##### 集合的并集运算A U B 
 
@@ -714,7 +714,7 @@ sunion set1 set2
 
 相当于A+B然后去重
 
-![image-20230416220801531](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416220801531.png)
+![image-20230416220801531](./img/image-20230416220801531.png)
 
 ##### 集合的交集运算A ∩ B
 
@@ -729,7 +729,7 @@ sintercard 2 set1 set2
 
 解释：返回2个key set1和set2 的交集结果的基数，也就是结果有几个，limit为限制显示几个
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416221233901.png" alt="image-20230416221233901" style="zoom:50%;" />
+<img src="./img/image-20230416221233901.png" alt="image-20230416221233901" style="zoom:50%;" />
 
 #### 案例
 
@@ -757,7 +757,7 @@ zadd zset1 60 v1 70 v2 80 v3
 zrange zset1 0 -1 [withscores]
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416222840067.png" alt="image-20230416222840067" style="zoom:50%;" />
+<img src="./img/image-20230416222840067.png" alt="image-20230416222840067" style="zoom:50%;" />
 
 #### zrerange
 
@@ -767,7 +767,7 @@ zrange zset1 0 -1 [withscores]
 zrevrange zset1 0 -1 [withscores]
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416223025290.png" alt="image-20230416223025290" style="zoom:50%;" />
+<img src="./img/image-20230416223025290.png" alt="image-20230416223025290" style="zoom:50%;" />
 
 #### zrangebyscores
 
@@ -782,7 +782,7 @@ zrangebyscore zset1 60 70 withscores limit 0 1  --显示带着分数[60, 70]的�
 zrangebyscore zset1 (60 70 withscores limit 0 1 --显示带着分数（60, 70]的值，显示1个
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416223929669.png" alt="image-20230416223929669" style="zoom:50%;" />
+<img src="./img/image-20230416223929669.png" alt="image-20230416223929669" style="zoom:50%;" />
 
 #### zscore
 
@@ -792,7 +792,7 @@ zrangebyscore zset1 (60 70 withscores limit 0 1 --显示带着分数（60, 70]�
 zscore zset1 v1
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416224015656.png" alt="image-20230416224015656" style="zoom:50%;" />
+<img src="./img/image-20230416224015656.png" alt="image-20230416224015656" style="zoom:50%;" />
 
 #### zcard
 
@@ -802,7 +802,7 @@ zscore zset1 v1
 zcard zset1
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416224137660.png" alt="image-20230416224137660" style="zoom:50%;" />
+<img src="./img/image-20230416224137660.png" alt="image-20230416224137660" style="zoom:50%;" />
 
 #### zrem
 
@@ -812,13 +812,13 @@ zcard zset1
 zrem zset1 v1
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416224211238.png" alt="image-20230416224211238" style="zoom:50%;" />
+<img src="./img/image-20230416224211238.png" alt="image-20230416224211238" style="zoom:50%;" />
 
 #### zincrby
 
 增加某个元素的分数
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416224413334.png" alt="image-20230416224413334" style="zoom:50%;" />
+<img src="./img/image-20230416224413334.png" alt="image-20230416224413334" style="zoom:50%;" />
 
 #### zcount
 
@@ -830,7 +830,7 @@ zrem zset1 v1
 zcount zset1 60 80
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416224547855.png" alt="image-20230416224547855" style="zoom:50%;" />
+<img src="./img/image-20230416224547855.png" alt="image-20230416224547855" style="zoom:50%;" />
 
 #### zmpop 
 
@@ -842,7 +842,7 @@ Redis7新命令，从键名列表的第一个非空排序集中弹出一个或�
 zmpop 1 zset1 min count 1  --弹出zset1中最小的一个值
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416225038553.png" alt="image-20230416225038553" style="zoom:50%;" />
+<img src="./img/image-20230416225038553.png" alt="image-20230416225038553" style="zoom:50%;" />
 
 #### zrank/zrevrank
 
@@ -854,7 +854,7 @@ zrank zset1 v1
 zrevrank zset1 v1
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416225229219.png" alt="image-20230416225229219" style="zoom:50%;" />
+<img src="./img/image-20230416225229219.png" alt="image-20230416225229219" style="zoom:50%;" />
 
 #### 案例
 
@@ -865,7 +865,7 @@ zrevrank zset1 v1
 - 由0和1状态表现的二进制位的bit数组
 - 需求：用户是否登陆过/视频、广告是否点击/签到
 
-![image-20230415223026291](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230415223026291.png)
+![image-20230415223026291](./img/image-20230415223026291.png)
 
 - 上面是 1 字节 (bit )所存储的 8 位 (byte)的数据，每位由0和1构成
 - 本质：用string类型作为底层数据结构实现的一种统计二值状态的数据类型，位图本质是数组
@@ -881,7 +881,7 @@ setbit k1 7 1
 get k1
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416231121967.png" alt="image-20230416231121967" style="zoom:50%;" />
+<img src="./img/image-20230416231121967.png" alt="image-20230416231121967" style="zoom:50%;" />
 
 存储后k1内部是：`01000001`
 
@@ -889,7 +889,7 @@ k1的下标展示：   ` 01234567  `
 
 由于本质是string，所以可以使用get来获取k1
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416231447656.png" alt="image-20230416231447656" style="zoom:50%;" />
+<img src="./img/image-20230416231447656.png" alt="image-20230416231447656" style="zoom:50%;" />
 
 #### getbit
 
@@ -898,7 +898,7 @@ getbit k1 1
 getbit k1 0
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416231540538.png" alt="image-20230416231540538" style="zoom:50%;" />
+<img src="./img/image-20230416231540538.png" alt="image-20230416231540538" style="zoom:50%;" />
 
 #### strlen
 
@@ -910,7 +910,7 @@ setbit k1 8 1
 strlen k1
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416231800493.png" alt="image-20230416231800493" style="zoom:50%;" />
+<img src="./img/image-20230416231800493.png" alt="image-20230416231800493" style="zoom:50%;" />
 
 由于超过8位，所以算2个字节
 
@@ -925,7 +925,7 @@ setbit uid:marvin 2 1
 bitcount uid:marvin
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416232032194.png" alt="image-20230416232032194" style="zoom:50%;" />
+<img src="./img/image-20230416232032194.png" alt="image-20230416232032194" style="zoom:50%;" />
 
 可以统计登录或签到次数
 
@@ -953,7 +953,7 @@ bitop and k3 20230101 20230102
 bitcount k3  --最后查看结果
 ```
 
-![image-20230416233137353](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416233137353.png)
+![image-20230416233137353](./img/image-20230416233137353.png)
 
 #### 案例
 
@@ -968,9 +968,10 @@ bitcount k1 	-- 统计一年登录多少天
 strlen k2		-- 统计占用多少字节
 ```
 
-<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416233705304.png" alt="image-20230416233705304" style="zoom:50%;" />
+<img src="./img/image-20230416233705304.png" alt="image-20230416233705304" style="zoom:50%;" />
 
 > 只占46字节。
 >
 > 按年去存储一个用户的签到情况，365天只需要365
 
+ 
