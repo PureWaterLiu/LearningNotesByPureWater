@@ -29,13 +29,13 @@
 - 支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用
 - 支持数据的备份，即master-slave模式的数据备份
 
-![image-20230415205200562](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415205200562.png)
+![image-20230415205200562](./img/image-20230415205200562.png)
 
 ## 安装和介绍
 
 默认安装在: usr/local/bin
 
-![image-20230415213348569](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415213348569.png)
+![image-20230415213348569](./img/image-20230415213348569.png)
 
 - redis-benchmark: 性能测试工具，服务启动后运行该命令，看看性能如何
 - redis-check-aof: 修复有问题的AOF文件
@@ -76,7 +76,7 @@ redis-server /myredis/redis7.conf
 redis-cli -a 123456 -p 6379
 ```
 
-如果ping后显示PONG则redis服务器安装成功 ![image-20230415220152218](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415220152218.png)
+如果ping后显示PONG则redis服务器安装成功 ![image-20230415220152218](./img/image-20230415220152218.png)
 
 ## 退出客户端
 
@@ -166,7 +166,7 @@ Redis zeset和set一样也是string类型元素的集合，且不允许重复成
 
 Bit arrays（or simply bitmaps，我们可以称为 位图）
 
-![image-20230415223026291](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415223026291.png)
+![image-20230415223026291](./img/image-20230415223026291.png)
 
 一个字节（1byte）=8位（bit）
 
@@ -244,7 +244,7 @@ KEEPTTL为6.0版本添加的可选参数，其他为2.6.12版本添加的可选�
 - XX：键存在的时候设置键值
 - KEEPTTL：保留设置前指定键的过期时间
 
-![image-20230415233708062](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415233708062.png)
+![image-20230415233708062](./img/image-20230415233708062.png)
 
 - GET：返回指定键原本的值，若不存在时返回nil
 
@@ -274,7 +274,7 @@ set k2 v2
 mget k1 k2
 ```
 
-![image-20230415233905589](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415233905589.png)
+![image-20230415233905589](./img/image-20230415233905589.png)
 
 - getrange key startIndex endIndex
 
@@ -283,7 +283,7 @@ set k1 abcde
 getrange k1 0 -1
 ```
 
-![image-20230415234226903](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415234226903.png)
+![image-20230415234226903](./img/image-20230415234226903.png)
 
 - setrange key startIndex 替换的字符串
 
@@ -292,7 +292,7 @@ set k1 1 xxyy
 get k1
 ```
 
-![image-20230415234425804](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415234425804.png)
+![image-20230415234425804](./img/image-20230415234425804.png)
 
 ### 数值增减
 
@@ -309,7 +309,7 @@ incr k1
 incrby k1 3
 ```
 
-![image-20230415234715876](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415234715876.png)
+![image-20230415234715876](./img/image-20230415234715876.png)
 
 #### 同理递减
 
@@ -321,7 +321,7 @@ decr k1
 decrby k1 10
 ```
 
-![image-20230415234850218](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415234850218.png)
+![image-20230415234850218](./img/image-20230415234850218.png)
 
 ### 获取字符串长度和内容追加
 
@@ -333,7 +333,7 @@ strlen k1
 append k1 xxxx
 ```
 
-![image-20230415235055653](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415235055653.png)
+![image-20230415235055653](./img/image-20230415235055653.png)
 
 ### 分布式锁
 
@@ -354,7 +354,7 @@ setnx k1 v11
 
 过期才创建新的k1
 
-![image-20230415235936002](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230415235936002.png)
+![image-20230415235936002](./img/image-20230415235936002.png)
 
 ### getset(先get再set)
 
@@ -366,9 +366,9 @@ set k1 v1 get
 getk1
 ```
 
-![image-20230416000152798](C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416000152798.png)
+![image-20230416000152798](./img/image-20230416000152798.png)
 
-## Redis列表 (List)
+### Redis列表 (List)
 
 底层时一个双向链表的结构，主要功能有push/pop，一般用在栈、队列和消息队列等等
 
@@ -382,7 +382,7 @@ left、right都可以插入添加；
 
 - 两端的操作性很高，通过索引下标的操作中间的节点性能会很差。
 
-### lpush/rpush/lrange
+#### lpush/rpush/lrange
 
 ```bash
 lpush list1 1 2 3 4 5           --5
@@ -392,11 +392,11 @@ lrange list1 0 -1            - 5 4 3 2 1
 lrange list2 0 -1            - 11 22 33 44 55
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416200615224.png" alt="image-20230416200615224" style="zoom:50%;" />
+<img src="./img/image-20230416200615224.png" alt="image-20230416200615224" style="zoom:50%;" />
 
 * 没有Rrange
 
-### lpop/rpop
+#### lpop/rpop
 
 ```bash
 lpop list1    -- 5
@@ -405,9 +405,9 @@ rpop list1             -- 1
 lrange list1 0 -1      -- 4 3 2
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416200907226.png" alt="image-20230416200907226" style="zoom:50%;" />
+<img src="./img/image-20230416200907226.png" alt="image-20230416200907226" style="zoom:50%;" />
 
-### lindex
+#### lindex
 
 按照索引下标获得元素（从上到下）
 
@@ -415,9 +415,9 @@ lrange list1 0 -1      -- 4 3 2
 lindex list1 0 -- 4
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416201115440.png" alt="image-20230416201115440" style="zoom:50%;" />
+<img src="./img/image-20230416201115440.png" alt="image-20230416201115440" style="zoom:50%;" />
 
-## llen
+#### llen
 
 获取列表中元素的个数
 
@@ -426,9 +426,9 @@ llen list1
 llen list2
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416201452096.png" alt="image-20230416201452096" style="zoom:50%;" />
+<img src="./img/image-20230416201452096.png" alt="image-20230416201452096" style="zoom:50%;" />
 
-### lrem
+#### lrem
 
 - lrem key 数字N 给定值 v1
 - 解释：从left往right删除N个值等于v1的元素
@@ -441,9 +441,9 @@ lrange list3 0 -1
 lrem list3 0 3       -- 把3全部删除
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416201919104.png" alt="image-20230416201919104" style="zoom:50%;" />
+<img src="./img/image-20230416201919104.png" alt="image-20230416201919104" style="zoom:50%;" />
 
-### ltrim
+#### ltrim
 
 - ltrim key 开始index 结束index
 
@@ -455,9 +455,9 @@ ltrim list3 0 3
 lrange list3 0 -1
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416202437248.png" alt="image-20230416202437248" style="zoom:50%;" />
+<img src="./img/image-20230416202437248.png" alt="image-20230416202437248" style="zoom:50%;" />
 
-### rpoplpush
+#### rpoplpush
 
 - rpoplpush 源列表 目的列表
 - 移除列表最后一个元素，并将该元素添加至另一个列表并返回
@@ -468,9 +468,9 @@ rpoplpush list1 list2
 lrange list2 0 -1
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416202729042.png" alt="image-20230416202729042" style="zoom:50%;" />
+<img src="./img/image-20230416202729042.png" alt="image-20230416202729042" style="zoom:50%;" />
 
-### lset 
+#### lset 
 
 - lset key index element
 - 解释：从key的left开始的index索引位置设置element的值
@@ -480,9 +480,9 @@ lset list1 2 marvin
 lrange list1 0 -1
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416203126624.png" alt="image-20230416203126624" style="zoom:50%;" />
+<img src="./img/image-20230416203126624.png" alt="image-20230416203126624" style="zoom:50%;" />
 
-### linsert
+#### linsert
 
 - linsert key before/after 已有值 插入新的值
 - 解释：在key的已有值 前/后 插入新的值
@@ -491,9 +491,9 @@ lrange list1 0 -1
 linsert list1 before marvin benny
 ```
 
-<img src="C:\Users\Marvin\AppData\Roaming\Typora\typora-user-images\image-20230416203439960.png" alt="image-20230416203439960" style="zoom:50%;" />
+<img src="./img/image-20230416203439960.png" alt="image-20230416203439960" style="zoom:50%;" />
 
-### 案例
+#### 案例
 
 1. 新文章发布，id为33 和 44
 
@@ -504,3 +504,473 @@ linsert list1 before marvin benny
 3. 查看列表中这个作者的全部文章，分页显示10条
 
    lrange myList 0 9
+
+### Redis哈希（Hash）
+
+Key-value模式不变，但是value是一个键值对
+
+#### hset/hget
+
+```
+hset user:001 id 11 name z3 age 25
+hget user:001 id
+hget user:001 name
+hget user:001 age
+```
+
+![image-20230416211731298](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416211731298.png)
+
+#### hmset/hmget
+
+批处理
+
+```bash
+hmset user:001 id 22 name l4 age 21
+hmget user:001 id name age
+```
+
+![image-20230416212044333](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416212044333.png)
+
+#### hgetall/hdel
+
+hgetall: 遍历全部
+
+hdel: 删除指定value的key
+
+```bash
+hgetall user:001
+hdel user:001 age
+```
+
+![image-20230416212258480](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416212258480.png)
+
+#### hlen
+
+获取某个key内的全部数量
+
+```bash
+hlen user:001
+```
+
+![image-20230416212613333](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416212613333.png)
+
+#### hexists
+
+在key里某个key 是否存在
+
+返回值：1存在，0不存在
+
+```bash
+hexists user:001 name  --1
+hexists user:001 score  --0
+```
+
+![image-20230416212742940](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416212742940.png)
+
+#### hkeys
+
+列出hash里面的所有key
+
+#### hvals
+
+列出hash里面的所有value
+
+```bash
+hkeys user:001
+hvals user:001
+```
+
+![image-20230416213014817](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416213014817.png)
+
+#### hincrby/hincrbyfloat
+
+```bash
+hincrby user:001 age 5
+hincrbyfloat user:001 score 0.5
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416213705072.png" alt="image-20230416213705072" style="zoom:50%;" />
+
+#### hsetnx
+
+不存在就赋值，存在无效
+
+返回值：0为失效，1为成功
+
+```bash
+hsetnx user:001 id 22
+hsetnx user:001 id 23
+```
+
+![image-20230416213942955](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416213942955.png)
+
+### Redis集合（Set）
+
+单值多value，且无重复
+
+#### sadd
+
+自动去重
+
+```bash
+sadd set1 1 1 1 2 2 2 3 4 5
+smembers set1
+```
+
+#### smembers 
+
+查看set中的元素
+
+![image-20230416214954261](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416214954261.png)
+
+#### sismember
+
+判断 某个值 是否为set中的值
+
+返回值：0不是，1是
+
+``` bash
+sismember set1 x
+sismember set1 1
+```
+
+![image-20230416215212948](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416215212948.png)
+
+#### srem
+
+删除set中的某个元素
+
+返回值：成功1，失败0
+
+```bash
+srem set1 y
+srem set1 1
+```
+
+![image-20230416215325082](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416215325082.png)
+
+#### scard
+
+统计元素个数
+
+```bash
+scard set1
+```
+
+![image-20230416215413495](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416215413495.png)
+
+#### srandmember 
+
+从集合中随机==展现设置的数字个数==元素，元素不删除
+
+```bash
+srandmember set1 3  --随机展现3个
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416215749298.png" alt="image-20230416215749298" style="zoom:50%;" />
+
+#### spop
+
+从集合中随机==弹出==一个元素，出一个删一个
+
+```bash
+spop set1 3 --随机弹出3个
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416215821497.png" alt="image-20230416215821497" style="zoom:50%;" />
+
+#### smove
+
+从set1取一个值移到set2中
+
+```bash
+smove set1 set2 5  --把set1 中的 5 移动到 set2中
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416220217491.png" alt="image-20230416220217491" style="zoom:50%;" />
+
+#### 集合运算
+
+- A集合：`a b c 1 2`
+- B集合：`1 2 3 a x`
+
+##### 集合的差集运算A-B
+
+- 属于A但不属于B的元素构成的集合
+
+```bash
+sdiff set1 set2
+```
+
+![image-20230416220612167](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416220612167.png)
+
+##### 集合的并集运算A U B 
+
+- 属于A或者属于B的元素合并后的集合
+
+```bash
+sunion set1 set2
+```
+
+相当于A+B然后去重
+
+![image-20230416220801531](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416220801531.png)
+
+##### 集合的交集运算A ∩ B
+
+- 属于A同时也属于B
+
+```bash
+sinter set1 set2
+sintercard 2 set1 set2 
+```
+
+`sintercard numkeys key [key ...] [LIMIT limit]`为 Redis7 新增命令
+
+解释：返回2个key set1和set2 的交集结果的基数，也就是结果有几个，limit为限制显示几个
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416221233901.png" alt="image-20230416221233901" style="zoom:50%;" />
+
+#### 案例
+
+- 微信抽奖小程序 （spop）
+- 朋友圈点赞查看同赞好友 (sadd, srem)
+- QQ内推可能认识的人 (sdiff)
+
+### Redis有序集合Zset（sorted set）
+
+和set不同的是，每个value都是一个score-value的形式
+
+`score`：代表一个排序的分数值（从低到高）
+
+#### zadd
+
+```bash
+zadd zset1 60 v1 70 v2 80 v3
+```
+
+#### zrange
+
+遍历
+
+```bash
+zrange zset1 0 -1 [withscores]
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416222840067.png" alt="image-20230416222840067" style="zoom:50%;" />
+
+#### zrerange
+
+反转遍历
+
+```bash
+zrevrange zset1 0 -1 [withscores]
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416223025290.png" alt="image-20230416223025290" style="zoom:50%;" />
+
+#### zrangebyscores
+
+- `zrangebyscore key min max [withscores][limit offset count]`
+- 解释：
+  - 在score的[min, max]范围内取值
+  - `（`代表不包含
+  - limit：限制显示个数，有显示区间[0, 1)
+
+```bash
+zrangebyscore zset1 60 70 withscores limit 0 1  --显示带着分数[60, 70]的值，显示1个
+zrangebyscore zset1 (60 70 withscores limit 0 1 --显示带着分数（60, 70]的值，显示1个
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416223929669.png" alt="image-20230416223929669" style="zoom:50%;" />
+
+#### zscore
+
+查询分数
+
+```bash
+zscore zset1 v1
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416224015656.png" alt="image-20230416224015656" style="zoom:50%;" />
+
+#### zcard
+
+查询个数
+
+```bash
+zcard zset1
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416224137660.png" alt="image-20230416224137660" style="zoom:50%;" />
+
+#### zrem
+
+删除对应的value值
+
+```bash
+zrem zset1 v1
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416224211238.png" alt="image-20230416224211238" style="zoom:50%;" />
+
+#### zincrby
+
+增加某个元素的分数
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416224413334.png" alt="image-20230416224413334" style="zoom:50%;" />
+
+#### zcount
+
+获取指定分数范围内的元素个数
+
+返回值：元素个数
+
+```bash
+zcount zset1 60 80
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416224547855.png" alt="image-20230416224547855" style="zoom:50%;" />
+
+#### zmpop 
+
+- `ZMPOP numkeys key [key] min|max [COUNT count]`
+
+Redis7新命令，从键名列表的第一个非空排序集中弹出一个或多个元素，它们是成员分数对（值和分数）
+
+```bash
+zmpop 1 zset1 min count 1  --弹出zset1中最小的一个值
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416225038553.png" alt="image-20230416225038553" style="zoom:50%;" />
+
+#### zrank/zrevrank
+
+- `zrank`:**从小到大**这个value排第几位
+- `zrevrank`:**从大到小**这个value排第几位
+
+```bash
+zrank zset1 v1
+zrevrank zset1 v1
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416225229219.png" alt="image-20230416225229219" style="zoom:50%;" />
+
+#### 案例
+
+- 商品热销排行：销售量为score，商品编号为value，购买**zincrby**增加数量，排行**zrevrange**
+
+### Redis位图（bitmap）
+
+- 由0和1状态表现的二进制位的bit数组
+- 需求：用户是否登陆过/视频、广告是否点击/签到
+
+![image-20230415223026291](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230415223026291.png)
+
+- 上面是 1 字节 (bit )所存储的 8 位 (byte)的数据，每位由0和1构成
+- 本质：用string类型作为底层数据结构实现的一种统计二值状态的数据类型，位图本质是数组
+- 作用：状态统计
+
+#### setbit key offset(偏移量) value
+
+- 偏移量是从0开始的
+
+```bash
+setbit k1 1 1
+setbit k1 7 1
+get k1
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416231121967.png" alt="image-20230416231121967" style="zoom:50%;" />
+
+存储后k1内部是：`01000001`
+
+k1的下标展示：   ` 01234567  `   
+
+由于本质是string，所以可以使用get来获取k1
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416231447656.png" alt="image-20230416231447656" style="zoom:50%;" />
+
+#### getbit
+
+```bash
+getbit k1 1 
+getbit k1 0
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416231540538.png" alt="image-20230416231540538" style="zoom:50%;" />
+
+#### strlen
+
+字节统计，8位为1个字节
+
+```bash
+strlen k1
+setbit k1 8 1
+strlen k1
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416231800493.png" alt="image-20230416231800493" style="zoom:50%;" />
+
+由于超过8位，所以算2个字节
+
+#### bitcount
+
+全部键中含多少个1
+
+```bash
+setbit uid:marvin 0 1
+setbit uid:marvin 1 1
+setbit uid:marvin 2 1
+bitcount uid:marvin
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416232032194.png" alt="image-20230416232032194" style="zoom:50%;" />
+
+可以统计登录或签到次数
+
+#### bitop
+
+`bitop operation destkey key [key]`
+
+- operation：and, or, not, xor
+
+```bash
+-- 20230101的时候用户登录情况 偏移量映射为用户，后面0，1为是否登录
+setbit 20230101 0 1
+setbit 20230101 1 1
+setbit 20230101 2 1
+
+-- 20230102的时候用户登录情况
+setbit 20230102 0 1
+setbit 20230102 2 1
+
+bitcount 20230101
+bitcount 20230102
+
+统计这两天的在线人数
+bitop and k3 20230101 20230102
+bitcount k3  --最后查看结果
+```
+
+![image-20230416233137353](C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416233137353.png)
+
+#### 案例
+
+- 同bitop，统计登录
+- 一年365天，统计全年登录占用多少字节？
+
+```bash
+setbit k1 0 1   -- 第1天登录
+setbit k1 1 1 	-- 第2天登录
+setbit k1 364 1  -- 第365天登录
+bitcount k1 	-- 统计一年登录多少天
+strlen k2		-- 统计占用多少字节
+```
+
+<img src="C:\Users\Marvin\Desktop\编程学习\Redis\img\image-20230416233705304.png" alt="image-20230416233705304" style="zoom:50%;" />
+
+> 只占46字节。
+>
+> 按年去存储一个用户的签到情况，365天只需要365
+
